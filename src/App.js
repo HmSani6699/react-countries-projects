@@ -1,25 +1,68 @@
-import logo from './logo.svg';
+/*
+
+//-------------------module 1 and 2----------------//
+
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hallo countries</h1>
+      <LoadCountries></LoadCountries>
     </div>
   );
 }
+function LoadCountries() {
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/all')
+      .then(res => res.json())
+      .then(data => setCountries(data))
+  }, [])
+  return (
+    <div>
+      <h1>All countries: {countries.length}</h1>
+      {
+        countries.map(country => <Country
+          country={country}
+          key={country.cca3}
+        ></Country>)
+      }
+    </div>
+  )
+}
+
+function Country(props) {
+  const { name, population, area } = props.country;
+  return (
+    <div>
+      <h1>COuntry name: {name.common}</h1>
+      <p>Population: {population}</p>
+      <p>Area: {area}</p>
+    </div>
+  )
+}
+
+export default App;
+
+*/
+
+
+//------------------ module 3 ---------------//
+
+
+import React from 'react';
+import './App.css';
+import Countries from './component/Countries/Countries';
+
+const App = () => {
+  return (
+    <div className='App'>
+      <Countries></Countries>
+    </div>
+  );
+};
 
 export default App;
