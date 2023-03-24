@@ -56,11 +56,13 @@ export default App;
 import React from 'react';
 import './App.css';
 import Countries from './component/Countries/Countries';
+import Footer from './component/Footer/Footer';
 
 const App = () => {
   return (
     <div className='App'>
       <Countries></Countries>
+      <Footer></Footer>
     </div>
   );
 };
