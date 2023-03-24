@@ -11,8 +11,9 @@ const Countries = () => {
     }, [])
     return (
         <div>
-            <h1>Hallo Countries</h1>
-            <h2>All countries: {countries.length}</h2>
+            <h1>Hallo forme Countries</h1>
+            <h2>All countries in length: {countries.length}</h2>
+            <h5><i>Alhamdolillha ami pereci</i></h5>
             <div className='countries-container'>
                 {
                     countries.map(country => <Country
